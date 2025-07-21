@@ -7,13 +7,13 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
       color: #333;
     }
     header {
-      background-color: #1abc9c;
+      background: #111;
       color: white;
       padding: 2rem;
       text-align: center;
@@ -24,26 +24,24 @@
       margin: auto;
     }
     h1, h2, h3 {
-      color: #1abc9c;
+      color: #111;
     }
-    a {
-      color: #2980b9;
+    .projects a {
+      color: #007acc;
       text-decoration: none;
     }
-    a:hover {
+    .projects a:hover {
       text-decoration: underline;
+    }
+    .project-item {
+      margin-bottom: 1.5rem;
     }
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #1abc9c;
-      color: white;
       font-size: 0.9rem;
-    }
-    .project {
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 1rem;
+      background: #111;
+      color: white;
     }
   </style>
 </head>
@@ -55,23 +53,19 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      I'm a passionate young developer interested in web development, software engineering, and creating beautiful user experiences. I enjoy building creative, functional apps and constantly improving my skills.
-    </p>
+    <p>I’m a self-taught programmer interested in building beautiful and useful web applications. Currently improving my skills in HTML, CSS, JavaScript, and project development.</p>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="projects">
     <h2>Projects</h2>
 
-    <div class="project">
-      <h3>✅ To-Do List پیشرفته</h3>
+    <div class="project-item">
+      <h3>✅ Advanced To-Do List</h3>
       <p>
-        یک اپلیکیشن مدیریت کارها با طراحی آیفونی حرفه‌ای، اولویت‌بندی، دسته‌بندی، یادآوری، انیمیشن، خروجی PDF و حذف گروهی. ساخته‌شده با HTML, CSS, JavaScript. مناسب برای نمایش مهارت‌های UI/UX و برنامه‌نویسی.
+        A powerful, animated, iPhone-style To-Do List web app with priority levels, reminders, PDF export, and clean design.
       </p>
-      <p><a href="todo-pro.html" target="_blank">مشاهده پروژه</a></p>
+      <p><a href="todo-list.html" target="_blank">View Project</a></p>
     </div>
-
-    <!-- اگر پروژه‌های دیگه‌ای داشتی می‌تونی به همین شکل اضافه کنی -->
 
   </section>
 
