@@ -2,19 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Xiaomi Calculator Replica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calculator</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
-      background: #f5f5f7;
-      font-family: 'Roboto Mono', monospace;
+      font-family: Arial, sans-serif;
+      background: #ecf0f1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,163 +16,108 @@
 
     .calculator {
       background: #fff;
-      width: 360px;
-      border-radius: 36px;
-      box-shadow:
-        0 12px 24px rgba(0,0,0,0.1),
-        inset 0 -8px 20px #eee;
-      padding: 24px 24px 32px;
-      user-select: none;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 300px;
     }
 
     .display {
-      background: #f8f8fa;
-      border-radius: 36px;
-      height: 100px;
-      font-size: 3.6rem;
-      line-height: 1.2;
-      color: #191919;
+      width: 100%;
+      height: 60px;
+      font-size: 24px;
       text-align: right;
-      padding: 20px 32px;
-      box-shadow: inset 0 3px 6px #e1e1e6;
-      overflow-x: auto;
-      white-space: nowrap;
-      letter-spacing: 0.03em;
-      font-weight: 600;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: none;
+      background: #f4f4f4;
+      border-radius: 8px;
     }
 
     .buttons {
-      margin-top: 32px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 10px;
     }
 
     button {
-      font-size: 1.6rem;
-      border-radius: 28px;
+      padding: 20px;
+      font-size: 18px;
       border: none;
+      border-radius: 8px;
+      background-color: #2c3e50;
+      color: white;
       cursor: pointer;
-      transition: background-color 0.2s ease, box-shadow 0.15s ease;
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      color: #222;
-      background: #f4f4f5;
-      user-select: none;
-      padding: 0;
-      height: 64px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      transition: background 0.3s ease;
     }
 
-    button:active {
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
-      background-color: #ddd;
+    button:hover {
+      background-color: #1abc9c;
     }
 
-    .operator {
-      background: #ff9500;
-      color: white;
-      box-shadow:
-        0 4px 12px #ff9500cc;
-      font-weight: 800;
-    }
-    .operator:active {
-      background: #e08900;
-      box-shadow: inset 0 4px 8px #b26d00cc;
-    }
-
-    .clear {
-      background: #ff3b30;
-      color: white;
-      box-shadow:
-        0 4px 12px #ff3b30cc;
-      font-weight: 800;
-    }
-    .clear:active {
-      background: #d7322a;
-      box-shadow: inset 0 4px 8px #9f241fcc;
-    }
-
-    .equal {
-      background: #34c759;
-      color: white;
+    .span-two {
       grid-column: span 2;
-      box-shadow:
-        0 4px 12px #34c759cc;
-      font-weight: 800;
-    }
-    .equal:active {
-      background: #28a745;
-      box-shadow: inset 0 4px 8px #1f7033cc;
-    }
-
-    /* Adjust zero button to be wider like Xiaomi style */
-    .zero {
-      grid-column: span 2;
-      justify-content: flex-start;
-      padding-left: 36px;
-      font-size: 1.6rem;
     }
   </style>
 </head>
 <body>
-  <div class="calculator" role="application" aria-label="Xiaomi style calculator">
-    <div class="display" id="display" aria-live="polite" aria-atomic="true">0</div>
+
+  <div class="calculator">
+    <input type="text" id="display" class="display" disabled />
     <div class="buttons">
-      <button class="clear" aria-label="Clear" onclick="clearDisplay()">C</button>
-      <button aria-label="Open Parenthesis" onclick="appendValue('(')">(</button>
-      <button aria-label="Close Parenthesis" onclick="appendValue(')')">)</button>
-      <button class="operator" aria-label="Divide" onclick="appendValue('/')">÷</button>
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="backspace()">⌫</button>
+      <button onclick="append('%')">%</button>
+      <button onclick="append('/')">÷</button>
 
-      <button aria-label="Seven" onclick="appendValue('7')">7</button>
-      <button aria-label="Eight" onclick="appendValue('8')">8</button>
-      <button aria-label="Nine" onclick="appendValue('9')">9</button>
-      <button class="operator" aria-label="Multiply" onclick="appendValue('*')">×</button>
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('*')">×</button>
 
-      <button aria-label="Four" onclick="appendValue('4')">4</button>
-      <button aria-label="Five" onclick="appendValue('5')">5</button>
-      <button aria-label="Six" onclick="appendValue('6')">6</button>
-      <button class="operator" aria-label="Minus" onclick="appendValue('-')">−</button>
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('-')">−</button>
 
-      <button aria-label="One" onclick="appendValue('1')">1</button>
-      <button aria-label="Two" onclick="appendValue('2')">2</button>
-      <button aria-label="Three" onclick="appendValue('3')">3</button>
-      <button class="operator" aria-label="Plus" onclick="appendValue('+')">+</button>
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('+')">+</button>
 
-      <button class="zero" aria-label="Zero" onclick="appendValue('0')">0</button>
-      <button aria-label="Decimal Point" onclick="appendValue('.')">.</button>
-      <button class="equal" aria-label="Equals" onclick="calculate()">=</button>
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button class="span-two" onclick="calculate()">=</button>
     </div>
   </div>
 
   <script>
-    const display = document.getElementById('display');
+    const display = document.getElementById("display");
 
-    function appendValue(value) {
-      if(display.innerText === '0' && value !== '.') {
-        display.innerText = value;
+    function append(value) {
+      if (value === '%' && display.value !== '') {
+        display.value = eval(display.value) / 100;
       } else {
-        display.innerText += value;
+        display.value += value;
       }
     }
 
     function clearDisplay() {
-      display.innerText = '0';
+      display.value = '';
+    }
+
+    function backspace() {
+      display.value = display.value.slice(0, -1);
     }
 
     function calculate() {
       try {
-        // Replace Unicode operators with JS equivalents
-        let expression = display.innerText.replace(/÷/g, '/').replace(/×/g, '*').replace(/−/g, '-');
-        // Evaluate safely
-        let result = Function('"use strict";return (' + expression + ')')();
-        display.innerText = result;
-      } catch (e) {
-        display.innerText = 'Error';
+        display.value = eval(display.value);
+      } catch {
+        display.value = 'Error';
       }
     }
   </script>
+
 </body>
 </html>
