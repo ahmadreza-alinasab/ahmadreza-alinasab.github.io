@@ -7,130 +7,130 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fdfdfd;
-      margin: 0;
-      padding: 0;
+      background-color: #f4f4f4;
       color: #333;
+      margin: 0;
+      padding: 40px 20px;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.7em;
     }
     nav {
-      background-color: #1abc9c;
-      padding: 1rem;
-      text-align: center;
+      background-color: #2c3e50;
+      padding: 12px 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 20px auto 40px auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1.5rem;
-      font-weight: bold;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 1.1em;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
     nav a:hover {
-      text-decoration: underline;
+      background-color: #1abc9c;
+      color: #fff;
     }
     section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      margin-bottom: 40px;
     }
-    h1, h2, h3 {
+    section h2 {
+      color: #2c3e50;
+      border-bottom: 3px solid #1abc9c;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 1.1em;
+    }
+    ul li strong {
       color: #1abc9c;
     }
-    p {
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-    .project {
-      margin-bottom: 24px;
-    }
-    .project a {
-      color: #2980b9;
+    a {
       text-decoration: none;
-    }
-    .project a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background-color: #111;
-      color: white;
-      margin-top: 2rem;
-    }
-    .certificate-img {
-      width: 180px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-right: 24px;
-    }
-    .about-flex {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 24px;
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
   </nav>
 
-  <section id="home">
+  <div class="container" id="home">
     <h1>Ahmadreza Alinasab</h1>
     <p><strong>Aspiring Software Developer</strong></p>
     <p>I am passionate about programming and technology, and currently preparing to study <strong>Python</strong> and <strong>JavaScript</strong>.</p>
     <p>My goal is to build real-world projects, improve my skills daily, and eventually contribute to Germany’s thriving technology sector 🇩🇪.</p>
     <p>This site will showcase my journey, projects, and learning progress.</p>
     <p>Stay tuned!</p>
-  </section>
+  </div>
 
-  <section id="about">
+  <section id="about" class="container">
     <h2>About Me</h2>
-    <div class="about-flex">
-      <img src="IMG_20250721_072012.jpg" alt="My First Programming Certificate" class="certificate-img" />
+    <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+      <img src="IMG_20250721_072012.jpg" alt="My First Programming Certificate" style="width: 180px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
       <div>
-        <p>I am proud to have earned my very first programming certificate — a milestone that marks the beginning of my journey into the world of software development. This achievement motivates me to deepen my expertise and build impactful projects.</p>
+        <p>
+          I am proud to have earned my very first programming certificate — a milestone that marks the beginning of my journey into the world of software development. This achievement motivates me to deepen my expertise and build impactful projects.
+        </p>
       </div>
     </div>
-    <p>I'm a motivated aspiring software developer based in Iran. I have a strong interest in Python and JavaScript, and I'm currently building the foundation of my skills to pursue a tech career in Germany 🇩🇪.</p>
+    <p>
+      I'm a motivated aspiring software developer based in Iran. I have a strong interest in Python and JavaScript, and I'm currently building the foundation of my skills to pursue a tech career in Germany 🇩🇪.
+    </p>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="container">
     <h2>Projects</h2>
 
-    <div class="project">
+    <div style="margin-bottom: 24px;">
       <h3 style="color: #1abc9c;">🧮 Python Calculator App</h3>
       <p>A simple calculator written in Python that performs basic arithmetic operations. It's my first hands-on Python project, designed to improve my logic and coding fundamentals.</p>
-      <p><a href="calculator.html" target="_blank">Open Calculator</a></p>
+      <p><a href="calculator.html" target="_blank" style="color:#2980b9;">Open Calculator</a></p>
     </div>
 
-    <div class="project">
+    <div style="margin-bottom: 24px;">
       <h3 style="color: #1abc9c;">🌐 Portfolio Website</h3>
       <p>This website is my personal space on the internet where I showcase my projects, progress, and passion for programming. Built with pure HTML and CSS.</p>
       <p><em>You're looking at it!</em></p>
     </div>
 
-    <div class="project">
+    <div>
       <h3 style="color: #1abc9c;">🎖️ Certificate Showcase</h3>
       <p>Uploaded my first programming certificate to mark the beginning of my development journey. A great reminder of how far I've come and where I'm going.</p>
-      <p><a href="IMG_20250721_072012.jpg" target="_blank">View Certificate</a></p>
+      <p><a href="IMG_20250721_072012.jpg" target="_blank" style="color:#2980b9;">View Certificate</a></p>
     </div>
 
-    <div class="project">
+    <!-- اینجا پروژه جدید اضافه شده -->
+    <div style="margin-top: 24px;">
       <h3 style="color: #1abc9c;">✅ Advanced To-Do List</h3>
       <p>A powerful, animated, iPhone-style To-Do List web app with priority levels, reminders, PDF export, and clean design.</p>
-      <p><a href="todo-list.html" target="_blank">View Project</a></p>
+      <p><a href="todo-list.html" target="_blank" style="color:#2980b9;">View Project</a></p>
     </div>
-
   </section>
-
-  <footer>
-    Created by Ahmadreza Alinasab
-  </footer>
-
 </body>
 </html>
